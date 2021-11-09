@@ -3,18 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart.js"></script>
+    
     <title>Sistema de Aquisição de Sinais - Sistemas Embarcados I</title>
-    <style>
-        table { border-collapse: collapse; }
-        table, th, td { border: 1px solid black; }
-    </style>
 </head>
 
 <body>
-    <h1>Hello World!</h1>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-1 .offset-md-0">
+          <p><img class="classe_imagem" src="img\pucrs_brasao_h.png" width="133" height="83"></p>
+        </div>
+        <div class="col-md-10 .offset-md-1" height="83">
+          <div class="position-relative">
+            <br>
+            <h1><i><center>Sistema de Aquisição de Sinais</center></i></h1>
+          </div>
+        </div>
+        <div class="col-md-1 offset-md-12">
+          <br>
+          <button class="btn btn-dark" type="button"><span class="align-bottom">Sair</span></button>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Iniciar Aquisição</button>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Salvar Aquisição 1</button>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Salvar Aquisição 2</button>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Ajuda</button>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <canvas id="plot1" width="400" height="200"></canvas>
+        </div>
+          <div class="col-sm-6">
+          <canvas id="plot2" width="400" height="200"></canvas>
+        </div>
+          <script>
+            window.onload = () =>
+            {
+              const myChart1 = new Chart(document.getElementById('plot1'), data_grafico_1);
+              window.grafico1 = function(x1,y1)
+              {
+                myChart1.data.labels.push(x1);
+                myChart1.data.datasets[0].data.push(y1);
+                myChart1.update();
+              }
+              
+              const myChart2 = new Chart(document.getElementById('plot2'), data_grafico_2);
+              window.grafico2 = function(x2,y2)
+              {
+                myChart2.data.labels.push(x2);
+                myChart2.data.datasets[0].data.push(y2);
+                myChart2.update();
+              }
+            }
+          </script>
+          <script src="js/aquisicao.js"></script>          
+        
+       </div>
+      </div>
+    </div>
 
-    We are using Node.js <span id="node-version"></span>, Chromium <span id="chrome-version"></span>, Electron <span id="electron-version"></span>, and Serialport <span id="serialport-version"></span>
-
+    <hr>
+    <h5><center><i>Desenvolvido por Dreysson Monteiro e Guilherme Marques</i></center></h5>
+    <h5><center><i>Setembro/2021</i></center></h5>
+    <hr>
+    
+    <!--Trecho da comm serial??? -->
     <div id="error"></div>
     <div id="ports"></div>
     <script src="js/serial.js"></script>
