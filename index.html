@@ -27,29 +27,29 @@
         </div>
         <div class="col-md-1 offset-md-12">
           <br>
-          <button class="btn btn-dark" type="button"><span class="align-bottom">Sair</span></button>
+          <button class="btn btn-dark" type="button" id="bt_sair"><span class="align-bottom">Sair</span></button>
         </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-3">
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Iniciar Aquisição</button>
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off" id="bt_iniciar">Iniciar Aquisição</button>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Salvar Aquisição 1</button>
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off" id="bt_salvar_1">Salvar Aquisição 1</button>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Salvar Aquisição 2</button>
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off" id="bt_salvar_2">Salvar Aquisição 2</button>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="d-grid gap-2">
-            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Ajuda</button>
+            <button class="btn btn-primary" data-bs-toggle="button" autocomplete="off" id="bt_ajuda">Ajuda</button>
           </div>
         </div>
       <div class="row">
@@ -77,8 +77,23 @@
                 myChart2.data.datasets[0].data.push(y2);
                 myChart2.update();
               }
+              
+              const bt_sair = document.getElementById('bt_sair');
+              const bt_iniciar = document.getElementById('bt_iniciar');
+              const bt_salvar_1 = document.getElementById('bt_salvar_1');
+              const bt_salvar_2 = document.getElementById('bt_salvar_2');
+              const bt_ajuda = document.getElementById('bt_ajuda');
+                
+              bt_sair.onclick = bt_sair_click;
+              bt_iniciar.onclick = bt_iniciar_click;
+              bt_salvar_1.onclick = bt_salvar_1_click;
+              bt_salvar_2.onclick = bt_salvar_2_click;
+              bt_ajuda.onclick = bt_ajuda_click;
+              
             }
           </script>
+          
+          <script src="js/botoes.js"></script>          
           <script src="js/aquisicao.js"></script>          
         
        </div>
