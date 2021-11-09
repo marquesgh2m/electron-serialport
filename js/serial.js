@@ -12,13 +12,13 @@ var umidadeStr = 0;
 port.pipe(parser)
 parser.on('data', (line)=>
 {
-	console.log("Recebe: " + (line));
+	//console.log("Recebe: " + (line));
 	var leituraDHT11 = line.split('|');
 	temperaturaInt = leituraDHT11[0];
 	umidadeInt = leituraDHT11[1];
-	temperaturaStr += String(temperaturaInt)+'\n';
-	umidadeStr += String(umidadeInt)+'\n';
-	console.log("Temp:" + temperaturaStr);
-	console.log("Umid:" + umidadeStr);
+	temperaturaStr = String(temperaturaInt)+'\n';
+	umidadeStr = String(umidadeInt)+'\n';
+	//console.log("Temp:" + temperaturaStr);
+	//console.log("Umid:" + umidadeStr);
 })
 
