@@ -25,5 +25,5 @@ function bt_salvar_2_click ()
 
 function bt_ajuda_click ()
 {
-  
+  window.open('help.html')
 }
