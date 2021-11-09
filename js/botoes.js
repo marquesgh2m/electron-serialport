@@ -4,7 +4,7 @@ var controle=0;
 
 function bt_sair_click ()
 {
-  
+  window.close()
 }
 
 function bt_iniciar_click ()
