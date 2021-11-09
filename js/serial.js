@@ -1,6 +1,6 @@
 const serialport = require('serialport')
 
-let x=0
+//let x=0
 const Readline = require('@serialport/parser-readline')
 const port = new serialport('/dev/ttyUSB0', {baudRate:9600})
 const parser = new Readline()
