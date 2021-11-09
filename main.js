@@ -65,7 +65,18 @@ app.on('activate', function() {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
-        createWindow()
+        createWindow(){
+        resizable         : true,
+        center            : true,
+        autoHideMenuBar   : true,
+        opacity           : 1.0,
+        width             : 1280,
+        height            : 600,
+        webPreferences: {
+            nodeIntegration   : true,
+            contextIsolation  : false,      
+            preload: path.join(__dirname, 'preload.js')   
+        }
     }
 })
 
